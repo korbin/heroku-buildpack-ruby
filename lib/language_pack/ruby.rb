@@ -697,6 +697,10 @@ params = CGI.parse(uri.query || "")
   # @return [Boolean] true if it's detected and false if it isn't
   def node_js_installed?
     @node_js_installed ||= run("#{node_bp_bin_path}/node -v") && $?.success?
+
+    puts "Node.js is installed: #{@node_js_installed}"
+
+    return @node_js_installed
   end
 
   def run_assets_precompile_rake_task
