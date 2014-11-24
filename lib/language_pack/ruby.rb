@@ -388,7 +388,10 @@ ERROR
   # vendors binaries into the slug
   def install_binaries
     instrument 'ruby.install_binaries' do
-      binaries.each {|binary| install_binary(binary) }
+      binaries.each do |binary|
+        puts "Installing binary '#{binary}'."
+        install_binary(binary)
+      end
       Dir["bin/*"].each {|path| run("chmod +x #{path}") }
     end
   end
