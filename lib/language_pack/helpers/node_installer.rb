@@ -22,6 +22,7 @@ class LanguagePack::NodeInstaller
     node_bin = "#{MODERN_BINARY_PATH}/bin/node"
     @fetchers[:modern].fetch_untar("#{MODERN_BINARY_PATH}.tar.gz", "#{MODERN_BINARY_PATH}/bin/node")
     FileUtils.mv(node_bin, ".")
+    puts "Installed node to '#{Dir.pwd}'"
     FileUtils.rm_rf(MODERN_BINARY_PATH)
   end
 end
