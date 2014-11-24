@@ -408,6 +408,8 @@ ERROR
       else
         @fetchers[:buildpack].fetch_untar("#{name}.tgz")
       end
+
+      ENV["PATH"] += ":#{Dir.pwd}"
     end
   end
 
